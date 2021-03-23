@@ -30,3 +30,16 @@ last' (_:xs) = last' xs
 
 last'' :: [Int] -> Int
 last'' xs = head (reverse xs)
+
+-- lambda expression
+add' :: Int -> Int -> Int
+add' = \x -> (\y -> x + y)
+
+odds :: Int -> [Int]
+odds n = map f [0..n-1]
+    where
+        f x = x * 2 + 1
+
+-- lambda expression help create anonymous function
+odds' :: Int -> [Int]
+odds' n = map (\x -> x * 2 + 1) [0..n-1]
